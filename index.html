@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Kulang Foundation | Peace, Sports and Community in South Sudan</title>
+<meta name="description" content="Kulang Foundation is a South Sudanese non-profit registered in 2017. We build peace, run the Kulang Sports Academy, and stand with youth and communities across the country." />
+<meta name="keywords" content="Kulang Foundation, Gatwech Kulang, Kulang Sports Academy, South Sudan NGO, Juba foundation, peacebuilding South Sudan, youth sports" />
+<meta name="author" content="Kulang Foundation" />
+<link rel="canonical" href="https://kulang-foundation.org/" />
+
+<meta property="og:title" content="Kulang Foundation | Peace, Sports and Community" />
+<meta property="og:description" content="A South Sudanese foundation working on peace, youth empowerment and sport since 2017." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#1B5E4A',
+                    primaryDark: '#0F3D30',
+                    primaryLight: '#2D7A63',
+                    accent: '#C9973E',
+                    accentLight: '#E0B463',
+                    sage: '#8FA88D',
+                    cream: '#FAF8F3',
+                    light: '#F2EEE4',
+                    ink: '#1F2A24',
+                },
+                fontFamily: {
+                    heading: ['"Fraunces"', 'Georgia', 'serif'],
+                    body: ['"Inter"', 'system-ui', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+        font-family: 'Inter', sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        background-color: #FAF8F3;
+        overflow-x: clip;
+        color: #1F2A24;
+    }
+
+    section[id] { scroll-margin-top: 5rem; }
+
+    .hero-overlay {
+        background:
+            linear-gradient(180deg, rgba(15, 61, 48, 0.35) 0%, rgba(15, 61, 48, 0.78) 55%, rgba(15, 61, 48, 0.96) 100%),
+            linear-gradient(115deg, rgba(201, 151, 62, 0.30) 0%, transparent 55%);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.75s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.75s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.08s; }
+    .reveal.d2 { transition-delay: 0.16s; }
+    .reveal.d3 { transition-delay: 0.24s; }
+
+    .nav-link { position: relative; }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px; left: 50%;
+        width: 0; height: 2px;
+        background: #C9973E;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    .pulse-btn { animation: gentle-pulse 2.8s infinite; }
+    @keyframes gentle-pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(201, 151, 62, 0.42); }
+        50% { box-shadow: 0 0 0 14px rgba(201, 151, 62, 0); }
+    }
+
+    .scrolling-track {
+        display: flex;
+        animation: scroll-left 45s linear infinite;
+        width: max-content;
+    }
+    .scrolling-track:hover { animation-play-state: paused; }
+    @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+
+    .card-hover {
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 45px -18px rgba(27, 94, 74, 0.25);
+    }
+
+    .program-card {
+        background: #fff;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px -10px rgba(27, 94, 74, 0.10);
+        border: 1px solid rgba(27, 94, 74, 0.06);
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .program-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 45px -18px rgba(27, 94, 74, 0.22);
+        border-color: rgba(201, 151, 62, 0.28);
+    }
+    .program-img {
+        height: 210px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .program-card:hover .program-img { transform: scale(1.05); }
+
+    .counter-value { font-feature-settings: "tnum"; }
+
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #C9973E;
+    }
+    .eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 22px;
+        height: 1px;
+        background: #C9973E;
+    }
+
+    /* Vertical text accent */
+    .vertical-text {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        letter-spacing: 0.24em;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+        position: relative;
+        padding-left: 1.5rem;
+        border-left: 3px solid #C9973E;
+    }
+
+    /* Slight tilt for photos */
+    .tilt-1 { transform: rotate(-1.2deg); }
+    .tilt-2 { transform: rotate(1.4deg); }
+
+    /* Timeline */
+    .timeline-item {
+        position: relative;
+        padding-left: 2rem;
+        padding-bottom: 1.75rem;
+        border-left: 1px solid rgba(27, 94, 74, 0.16);
+    }
+    .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .timeline-dot {
+        position: absolute;
+        left: -7px;
+        top: 6px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: #C9973E;
+        border: 3px solid #FAF8F3;
+        box-shadow: 0 0 0 1px rgba(201, 151, 62, 0.4);
+    }
+
+    /* Big outlined number */
+    .big-number {
+        font-family: 'Fraunces', Georgia, serif;
+        font-weight: 800;
+        font-size: 4.5rem;
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1.4px rgba(27, 94, 74, 0.18);
+    }
+
+    /* Small marker dots before list items */
+    .dot-line {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #C9973E;
+        margin-top: 0.55rem;
+        flex-shrink: 0;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+    details summary { list-style: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .scrolling-track, .pulse-btn { animation: none; }
+        .tilt-1, .tilt-2 { transform: none; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="bg-primaryDark text-white/85 text-sm hidden md:block border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-2.5 flex flex-wrap justify-between items-center gap-2">
+        <div class="flex flex-wrap items-center gap-5">
+            <a href="tel:+211929222918" class="flex items-center gap-2 hover:text-accent transition"><i data-lucide="phone" class="w-3.5 h-3.5"></i> 0929 222 918</a>
+            <a href="mailto:contact@kulang.org" class="flex items-center gap-2 hover:text-accent transition"><i data-lucide="mail" class="w-3.5 h-3.5"></i> contact@kulang.org</a>
+            <span class="flex items-center gap-2 text-white/70"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> Registered 2017</span>
+        </div>
+        <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Tongpiny, Juba, South Sudan</span>
+    </div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<header id="navbar" class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md border-b border-primary/8 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-primary flex items-center justify-center shadow-md border-2 border-accent/40">
+                    <span class="font-heading text-accent text-xl md:text-2xl font-bold">K</span>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="font-heading text-lg md:text-xl font-bold text-primary leading-none">Kulang Foundation</span>
+                    <span class="block text-[9px] md:text-[10px] uppercase tracking-[0.16em] text-gray-500 mt-1">Since 2017 · Juba</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-7">
+                <a href="#home" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Home</a>
+                <a href="#about" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">About</a>
+                <a href="#founder" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Founder</a>
+                <a href="#work" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Our Work</a>
+                <a href="#academy" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Sports Academy</a>
+                <a href="#gallery" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Gallery</a>
+                <a href="#events" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Events</a>
+                <a href="#contact" class="nav-link text-sm font-medium text-gray-700 hover:text-accent transition">Contact</a>
+            </nav>
+
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#support" class="pulse-btn inline-flex items-center gap-2 bg-accent hover:bg-amber-600 text-white text-sm font-semibold px-6 py-2.5 rounded-xl transition-all shadow-md">
+                    <i data-lucide="hand-heart" class="w-4 h-4"></i> Support
+                </a>
+            </div>
+
+            <button id="menu-toggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-primary" aria-label="Open menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-[85%] max-w-sm h-full bg-cream shadow-2xl z-50 overflow-y-auto">
+    <div class="p-6 flex items-center justify-between border-b border-primary/10">
+        <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-primary flex items-center justify-center">
+                <span class="font-heading text-accent text-lg font-bold">K</span>
+            </div>
+            <span class="font-heading text-lg font-bold text-primary">Kulang</span>
+        </div>
+        <button id="menu-close" class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-primary" aria-label="Close menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+    </div>
+    <div class="px-6 py-6 space-y-4">
+        <a href="#home" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Home</a>
+        <a href="#about" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">About</a>
+        <a href="#founder" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Founder</a>
+        <a href="#work" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Our Work</a>
+        <a href="#academy" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Sports Academy</a>
+        <a href="#partners" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Partners</a>
+        <a href="#gallery" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Gallery</a>
+        <a href="#events" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Events</a>
+        <a href="#support" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Support Us</a>
+        <a href="#contact" class="block text-lg font-semibold text-gray-700 hover:text-accent mobile-link">Contact</a>
+    </div>
+    <div class="px-6 py-6 space-y-4 border-t border-primary/10">
+        <a href="tel:+211929222918" class="flex items-center gap-3 text-primary font-semibold"><i data-lucide="phone" class="w-5 h-5 text-accent"></i> 0929 222 918</a>
+        <a href="mailto:contact@kulang.org" class="flex items-center gap-3 text-primary font-semibold break-all"><i data-lucide="mail" class="w-5 h-5 text-accent shrink-0"></i> contact@kulang.org</a>
+        <a href="#support" class="mobile-link block w-full text-center bg-accent hover:bg-amber-600 text-white font-bold py-3 rounded-xl transition">Support the Foundation</a>
+    </div>
+</div>
+<div id="menu-overlay" class="fixed inset-0 bg-black/40 z-40 hidden"></div>
+
+<main>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="relative min-h-[95vh] flex items-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80" alt="Young people gathered together" class="absolute inset-0 w-full h-full object-cover" loading="eager" />
+        <div class="hero-overlay absolute inset-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-5 md:px-6 py-20 md:py-28 w-full">
+            <div class="max-w-3xl text-white">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2 rounded-full mb-7 border border-white/20">
+                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                    <span class="text-sm tracking-wide">A South Sudanese non-profit, registered in 2017</span>
+                </div>
+
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.02] mb-7">
+                    Peace. Sport.<br>
+                    <span class="text-accent italic">Community.</span>
+                </h1>
+
+                <p class="text-base md:text-lg text-white/90 max-w-2xl mb-9 leading-relaxed">
+                    Kulang Foundation works across South Sudan on peacebuilding, youth empowerment and humanitarian support. We run the Kulang Sports Academy, we sponsor peace tournaments, and we stand with the communities that need it most.
+                </p>
+
+                <div class="flex flex-wrap gap-4 mb-14">
+                    <a href="#work" class="inline-flex items-center gap-2 bg-accent hover:bg-amber-600 text-white font-semibold px-7 py-3.5 rounded-xl transition pulse-btn shadow-xl">
+                        Our Work <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#founder" class="inline-flex items-center gap-2 border-2 border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-xl transition bg-white/10 hover:bg-white/20 backdrop-blur-sm">
+                        Meet the Founder
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-8 sm:gap-14 pt-8 border-t border-white/20 max-w-xl">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-heading font-bold text-accent">2017</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wider mt-1">Registered</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-heading font-bold text-accent counter" data-target="20">0</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wider mt-1">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-heading font-bold text-accent">Juba</div>
+                        <div class="text-xs text-white/70 uppercase tracking-wider mt-1">Our Home</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+            <a href="#about" class="text-white/70 hover:text-white" aria-label="Scroll down">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== PARTNER TICKER ===== -->
+    <section class="bg-light py-5 border-y border-primary/10 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 flex items-center gap-8">
+            <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/60 whitespace-nowrap hidden md:block">Working with</span>
+            <div class="flex-1 overflow-hidden">
+                <div class="scrolling-track items-center gap-10 whitespace-nowrap">
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="radio-tower" class="w-4 h-4 text-accent"></i> Zain South Sudan</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-primary"></i> Nasvick Initiative</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="church" class="w-4 h-4 text-accent"></i> CTC Youth Ministry Fellowship</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-primary"></i> Addis Ababa Naath Peace Tournament</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="users-round" class="w-4 h-4 text-accent"></i> Community Leaders</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="globe-2" class="w-4 h-4 text-primary"></i> Development Partners</span>
+                    <!-- duplicate for loop -->
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="radio-tower" class="w-4 h-4 text-accent"></i> Zain South Sudan</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-primary"></i> Nasvick Initiative</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="church" class="w-4 h-4 text-accent"></i> CTC Youth Ministry Fellowship</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="trophy" class="w-4 h-4 text-primary"></i> Addis Ababa Naath Peace Tournament</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="users-round" class="w-4 h-4 text-accent"></i> Community Leaders</span>
+                    <span class="text-sm font-bold text-primary/75 flex items-center gap-2"><i data-lucide="globe-2" class="w-4 h-4 text-primary"></i> Development Partners</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="py-20 md:py-28 bg-white relative overflow-hidden">
+        <div class="hidden lg:block absolute top-24 -left-32 w-80 h-80 bg-primary/4 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start relative">
+
+            <!-- Left column: images and ornament -->
+            <div class="lg:col-span-5 reveal relative">
+                <div class="tilt-1">
+                    <img src="assets/hon.jpg" alt="Community gathering" class="rounded-3xl shadow-xl w-full h-[340px] object-cover" loading="lazy" />
+                </div>
+                <div class="tilt-2 absolute -bottom-10 -right-2 w-44 md:w-56">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Team meeting" class="rounded-2xl shadow-2xl w-full h-40 md:h-52 object-cover border-4 border-white" loading="lazy" />
+                </div>
+                <div class="absolute top-6 -left-3 bg-accent text-white px-4 py-3 rounded-xl shadow-lg">
+                    <span class="block text-[10px] uppercase tracking-widest text-white/80">Est.</span>
+                    <span class="font-heading text-2xl font-bold leading-none">2017</span>
+                </div>
+            </div>
+
+            <!-- Right column: text -->
+            <div class="lg:col-span-7 reveal d1 pt-8 lg:pt-0">
+                <span class="eyebrow mb-3">Who We Are</span>
+                <h2 class="font-heading text-3xl md:text-4xl lg:text-[2.9rem] font-bold text-primary mt-2 mb-6 leading-[1.1]">
+                    An independent foundation with a very simple idea: <span class="text-accent italic">people come first.</span>
+                </h2>
+
+                <div class="space-y-4 text-gray-600 leading-relaxed text-[15.5px] mb-8">
+                    <p>
+                        Kulang Foundation was registered in South Sudan in 2017 under the Government of South Sudan. We are an independent, non-profit making organisation. That means every shilling we receive goes into the work, and every project we run belongs to the community that asked for it.
+                    </p>
+                    <p>
+                        We work in three areas that keep coming back to the same thing: peace, youth, and dignity. Through sport. Through community dialogue. Through standing with the people who have been pushed to the margins and reminding them that they are seen.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+                    <div class="border-l-2 border-accent pl-4">
+                        <div class="font-heading text-3xl font-bold text-primary counter-value" data-target="8">0</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Years of Work</div>
+                    </div>
+                    <div class="border-l-2 border-accent pl-4">
+                        <div class="font-heading text-3xl font-bold text-primary">3</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Core Focus Areas</div>
+                    </div>
+                    <div class="border-l-2 border-accent pl-4">
+                        <div class="font-heading text-3xl font-bold text-primary">1</div>
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mt-1">Sports Academy</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="#work" class="inline-flex items-center gap-2 bg-primary hover:bg-primaryDark text-white font-semibold px-6 py-3 rounded-xl transition shadow-md">
+                        See What We Do <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#founder" class="inline-flex items-center gap-2 border border-primary/20 hover:border-primary text-primary font-semibold px-6 py-3 rounded-xl transition">
+                        Our Founder
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOUNDER ===== -->
+    <section id="founder" class="py-20 md:py-28 bg-light relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-flex items-center gap-2 bg-accent/12 text-accent text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="award" class="w-4 h-4"></i> Founder &amp; Chairman
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    Hon. Gatwech Peter Kulang
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px] max-w-2xl mx-auto">
+                    Humanitarian. Diplomat. Author. Community builder. Twenty years of walking alongside the people of South Sudan.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
+
+                <!-- Profile column -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-primary/8">
+                        <div class="relative">
+                            <img src="assets/hon.jpg" alt="Portrait" class="w-full h-80 object-cover" loading="lazy" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-primaryDark/85 via-primaryDark/30 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <p class="text-[11px] uppercase tracking-[0.2em] text-accent font-bold mb-1">Chairman, Kulang Foundation</p>
+                                <p class="font-heading text-2xl font-bold leading-tight">Hon. Gatwech Peter Kulang</p>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="book-open" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-sm font-semibold text-primary">Author</p>
+                                    <p class="text-xs text-gray-500 italic">"Integrating Diplomacy in Search of Humanity"</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="church" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-sm font-semibold text-primary">Faith</p>
+                                    <p class="text-xs text-gray-500">Devoted member of Christian Temple Church (CTC) of South Sudan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="graduation-cap" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                                <div>
+                                    <p class="text-sm font-semibold text-primary">Education</p>
+                                    <p class="text-xs text-gray-500">Cavendish University Uganda · Victoria University Melbourne · Holmesglen Institute</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story column -->
+                <div class="lg:col-span-7 reveal d1">
+
+                    <div class="pull-quote mb-10">
+                        <p class="font-heading text-xl md:text-2xl italic text-primary leading-snug">
+                            "Relief is not just about distributing aid. It is about restoring dignity, rebuilding trust, and reigniting hope."
+                        </p>
+                    </div>
+
+                    <p class="text-gray-600 leading-relaxed mb-8 text-[15.5px]">
+                        Gatwech Peter Kulang has spent more than two decades in humanitarian and community development work. He has walked the dusty roads of displacement camps in South Sudan and sat in the high-level negotiation rooms where policy is shaped. He knows this work from the ground up, and he brings that to Kulang Foundation every single day.
+                    </p>
+
+                    <h3 class="font-heading text-2xl font-bold text-primary mb-6">A career in public service</h3>
+
+                    <div class="mb-10">
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <p class="text-xs uppercase tracking-widest text-accent font-bold mb-1">2007 – 2009</p>
+                            <p class="font-heading text-lg font-bold text-primary leading-tight">Founder &amp; CEO — South Sudan Development Agency</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <p class="text-xs uppercase tracking-widest text-accent font-bold mb-1">2010 – 2014</p>
+                            <p class="font-heading text-lg font-bold text-primary leading-tight">Director General — Relief and Rehabilitation Commission</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <p class="text-xs uppercase tracking-widest text-accent font-bold mb-1">2016 – 2021</p>
+                            <p class="font-heading text-lg font-bold text-primary leading-tight">Undersecretary — Ministry of Humanitarian Affairs</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <p class="text-xs uppercase tracking-widest text-accent font-bold mb-1">2022 – Present</p>
+                            <p class="font-heading text-lg font-bold text-primary leading-tight">Chairman — Kulang Foundation</p>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-dot"></span>
+                            <p class="text-xs uppercase tracking-widest text-accent font-bold mb-1">2023 – 2025</p>
+                            <p class="font-heading text-lg font-bold text-primary leading-tight">National Chairperson — South Sudan Relief and Rehabilitation Commission</p>
+                        </div>
+                    </div>
+
+                    <h3 class="font-heading text-2xl font-bold text-primary mb-4">Leadership in practice</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-[15.5px]">
+                        In December 2025, Hon. Kulang joined H.E. Governor Jacob Dollar Rut on a peace tour across Upper Nile State. In August 2026, he attended the Juba Inter Nuer Churches Youth Ministry Conference in Mangateen. Wherever there is work to be done for peace and youth, he shows up.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#work" class="inline-flex items-center gap-2 bg-primary hover:bg-primaryDark text-white font-semibold px-6 py-3 rounded-xl transition shadow-md">
+                            His Vision in Action <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR WORK ===== -->
+    <section id="work" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="inline-flex items-center gap-2 bg-primary/8 text-primary text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="compass" class="w-4 h-4"></i> What We Do
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    Three pillars. <span class="text-accent italic">One purpose.</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px] max-w-2xl mx-auto">
+                    Sport, peace, and community. Everything we do runs through these three. No shortcuts, no noise.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- Pillar 1: Sports -->
+                <article class="program-card group reveal">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=900&q=80" alt="Youth playing football" class="program-img" loading="lazy" />
+                        <div class="absolute top-3 left-3 bg-white/95 backdrop-blur rounded-full px-3 py-1 flex items-center gap-1.5">
+                            <i data-lucide="trophy" class="w-3 h-3 text-primary"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Sport</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-heading text-2xl font-bold text-primary mb-2 leading-snug">Sport and Talent</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            Through the Kulang Sports Academy and sponsored tournaments, we give young people a place to play, to grow, and to be seen. Football is the door. Discipline, teamwork and hope are what comes through it.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-500 mb-5">
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Under-20 football teams</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Girls' football tournaments</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Peace tournaments across the region</li>
+                        </ul>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <a href="#academy" class="inline-flex items-center gap-1.5 text-accent text-sm font-semibold hover:gap-3 transition-all">
+                                Sports Academy <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pillar 2: Peace -->
+                <article class="program-card group reveal d1">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=900&q=80" alt="Community gathering for peace" class="program-img" loading="lazy" />
+                        <div class="absolute top-3 left-3 bg-white/95 backdrop-blur rounded-full px-3 py-1 flex items-center gap-1.5">
+                            <i data-lucide="dove" class="w-3 h-3 text-accent"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Peace</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-heading text-2xl font-bold text-primary mb-2 leading-snug">Peace and Unity</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            We join peace tours, support inter-community gatherings, and use sport as a bridge between groups that have been divided. When young people play together, old lines start to fade.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-500 mb-5">
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Peace tours with state leadership</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Inter-community sports events</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Dialogue through shared activities</li>
+                        </ul>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <a href="#events" class="inline-flex items-center gap-1.5 text-accent text-sm font-semibold hover:gap-3 transition-all">
+                                See Our Events <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pillar 3: Community -->
+                <article class="program-card group reveal d2">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80" alt="Community members together" class="program-img" loading="lazy" />
+                        <div class="absolute top-3 left-3 bg-white/95 backdrop-blur rounded-full px-3 py-1 flex items-center gap-1.5">
+                            <i data-lucide="heart-handshake" class="w-3 h-3 text-earth"></i>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-primary">Community</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-heading text-2xl font-bold text-primary mb-2 leading-snug">Community and Faith</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            From the Soul Winners Cinema at CTC Mangateen to the Itang Choirs reunion, we create spaces where people can gather, worship, and strengthen one another in faith.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-500 mb-5">
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Weekly gospel cinema nights</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Choir reunions and worship events</li>
+                            <li class="flex items-start gap-2"><span class="dot-line"></span> Youth ministry partnerships</li>
+                        </ul>
+                        <div class="mt-auto pt-4 border-t border-gray-100">
+                            <a href="#events" class="inline-flex items-center gap-1.5 text-accent text-sm font-semibold hover:gap-3 transition-all">
+                                Upcoming Events <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SPORTS ACADEMY ===== -->
+    <section id="academy" class="py-20 md:py-28 bg-primaryDark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[26rem] h-[26rem] bg-accent/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[20rem] h-[20rem] bg-primary/40 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Left: text -->
+                <div class="lg:col-span-6 reveal">
+                    <span class="eyebrow mb-3 !text-accent">Kulang Sports Academy</span>
+                    <h2 class="font-heading text-4xl md:text-5xl lg:text-[3.4rem] font-bold leading-[1.06] mb-6 mt-2">
+                        Where talent meets<br><span class="text-accent italic">discipline.</span>
+                    </h2>
+
+                    <p class="text-white/80 leading-relaxed mb-4 text-[15.5px]">
+                        The Kulang Sports Academy is where it all happens. Under-20 football teams. Girls' tournaments. Training sessions that build character as much as skill. Our young athletes wear the badge with pride, and they have earned it.
+                    </p>
+                    <p class="text-white/80 leading-relaxed mb-8 text-[15.5px]">
+                        The academy has produced winning teams, and it has produced something more important: young people who show up, work hard, and respect one another.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-5 mb-8">
+                        <div class="border-l-2 border-accent pl-4">
+                            <div class="font-heading text-3xl font-bold text-accent">U-20</div>
+                            <div class="text-xs uppercase tracking-widest text-white/60 mt-1">Football Teams</div>
+                        </div>
+                        <div class="border-l-2 border-accent pl-4">
+                            <div class="font-heading text-3xl font-bold text-accent">Girls</div>
+                            <div class="text-xs uppercase tracking-widest text-white/60 mt-1">Tournaments</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                            <p class="text-sm text-white/80">Friendship Tournament 2024 Under-20 champions</span></p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                            <p class="text-sm text-white/80">Sponsored the Addis Ababa Naath Peace Tournament</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-accent mt-0.5 shrink-0"></i>
+                            <p class="text-sm text-white/80">Girls' Football Tournament New Year 2025: "Stepping into New Year with Hope"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: images -->
+                <div class="lg:col-span-6 reveal d1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-2 rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80" alt="Football match in action" class="w-full h-64 md:h-72 object-cover" loading="lazy" />
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=700&q=80" alt="Young athletes" class="w-full h-44 md:h-52 object-cover" loading="lazy" />
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=700&q=80" alt="Team huddle" class="w-full h-44 md:h-52 object-cover" loading="lazy" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PARTNERS ===== -->
+    <section id="partners" class="py-20 md:py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="inline-flex items-center gap-2 bg-accent/12 text-accent text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="handshake" class="w-4 h-4"></i> Our Partners
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    Better together.
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px] max-w-xl mx-auto">
+                    The work is bigger than us. These are the partners who walk with us.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+
+                <div class="card-hover bg-white rounded-2xl p-7 border border-primary/8 text-center">
+                    <div class="w-14 h-14 mx-auto bg-primary/8 rounded-2xl flex items-center justify-center mb-5">
+                        <i data-lucide="radio-tower" class="w-7 h-7 text-primary"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-primary mb-2">Zain South Sudan</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Telecom partner supporting our sports tournaments and youth events.</p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-7 border border-primary/8 text-center">
+                    <div class="w-14 h-14 mx-auto bg-accent/12 rounded-2xl flex items-center justify-center mb-5">
+                        <i data-lucide="sparkles" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-primary mb-2">Nasvick Initiative</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Community partner on girls' football and youth programmes.</p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-7 border border-primary/8 text-center">
+                    <div class="w-14 h-14 mx-auto bg-primary/8 rounded-2xl flex items-center justify-center mb-5">
+                        <i data-lucide="church" class="w-7 h-7 text-primary"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-primary mb-2">CTC Youth Ministry</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Christian Temple Church youth fellowship, Mangateen.</p>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-7 border border-primary/8 text-center">
+                    <div class="w-14 h-14 mx-auto bg-accent/12 rounded-2xl flex items-center justify-center mb-5">
+                        <i data-lucide="trophy" class="w-7 h-7 text-accent"></i>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-primary mb-2">Naath Peace Tournament</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Addis Ababa. Proud sponsor of a peace-building competition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="py-20 md:py-28 bg-light relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="inline-flex items-center gap-2 bg-primary/8 text-primary text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="camera" class="w-4 h-4"></i> Gallery
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    Moments from the ground.
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px]">Matches, tournaments, peace tours, worship nights, and the faces of the young people we serve.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 reveal" id="gallery-grid">
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80" alt="Football match" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80" alt="Youth players" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Team huddle" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=800&q=80" alt="Sport" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80" alt="Community" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Children" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?auto=format&fit=crop&w=800&q=80" alt="Worship" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80" alt="Congregation" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80" alt="Youth gathering" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Meeting" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="Sport event" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-zoom-in bg-white aspect-square gallery-item">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Community team" loading="lazy" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                </div>
+            </div>
+
+            <div class="mt-12 text-center reveal">
+                <button id="gallery-cta" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg hover:shadow-xl">
+                    <i data-lucide="images" class="w-5 h-5"></i> View Full Gallery
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Click any photo to view it larger</p>
+            </div>
+        </div>
+
+        <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/92 backdrop-blur-sm p-4">
+            <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">
+                <button id="lightbox-close" class="absolute -top-12 right-0 text-white/80 hover:text-white transition p-2" aria-label="Close">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <div class="w-full flex items-center justify-center bg-black/50 rounded-2xl overflow-hidden">
+                    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full object-contain" />
+                </div>
+                <button id="lightbox-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition" aria-label="Previous">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="lightbox-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition" aria-label="Next">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTS ===== -->
+    <section id="events" class="py-20 md:py-28 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="inline-flex items-center gap-2 bg-accent/12 text-accent text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="calendar-heart" class="w-4 h-4"></i> Upcoming Events
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    On the calendar.
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px] max-w-2xl mx-auto">
+                    Sport, worship, community. Come and be part of what's coming next.
+                </p>
+            </div>
+
+            <div class="space-y-5">
+
+                <!-- Event 1 -->
+                <article class="card-hover bg-white rounded-2xl overflow-hidden border border-primary/8 grid md:grid-cols-12 reveal">
+                    <div class="md:col-span-3 bg-primary text-white p-6 flex md:flex-col items-center md:items-start justify-between md:justify-center gap-2">
+                        <span class="text-[10px] uppercase tracking-widest text-accent font-semibold">September</span>
+                        <span class="font-heading text-5xl md:text-6xl font-bold leading-none">06</span>
+                        <span class="text-xs text-white/60 md:mt-2">Sunday · 2026</span>
+                    </div>
+                    <div class="md:col-span-9 p-6 md:p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-accent font-semibold bg-accent/10 px-3 py-1 rounded-full">
+                                <i data-lucide="music" class="w-3 h-3"></i> Worship
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3 h-3"></i> 2:00 PM
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> CTC South Sudan, Mangateen
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-3">Reunion of Former Itang Choirs</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm mb-3">
+                            A special Sunday service bringing together former Itang Choirs once again to lift their voices in praise and unity. "Make a joyful noise to the LORD, all the earth." Psalm 100:1
+                        </p>
+                        <p class="text-xs italic text-gray-500">Come with your family. Invite a friend. All are welcome.</p>
+                    </div>
+                </article>
+
+                <!-- Event 2 -->
+                <article class="card-hover bg-white rounded-2xl overflow-hidden border border-primary/8 grid md:grid-cols-12 reveal">
+                    <div class="md:col-span-3 bg-accent text-white p-6 flex md:flex-col items-center md:items-start justify-between md:justify-center gap-2">
+                        <span class="text-[10px] uppercase tracking-widest text-white/80 font-semibold">Every</span>
+                        <span class="font-heading text-5xl md:text-6xl font-bold leading-none">Sat</span>
+                        <span class="text-xs text-white/70 md:mt-2">Weekly</span>
+                    </div>
+                    <div class="md:col-span-9 p-6 md:p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-accent font-semibold bg-accent/10 px-3 py-1 rounded-full">
+                                <i data-lucide="film" class="w-3 h-3"></i> Cinema
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="clock" class="w-3 h-3"></i> 5:00 PM
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> Christian Temple Church, Mangateen
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-3">Soul Winners Cinema</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            Every Saturday from 5 PM at Christian Temple Church in Mangateen. Gospel films, worship videos, and a space to sit and be refreshed with others.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Event 3 -->
+                <article class="card-hover bg-white rounded-2xl overflow-hidden border border-primary/8 grid md:grid-cols-12 reveal">
+                    <div class="md:col-span-3 bg-primaryDark text-white p-6 flex md:flex-col items-center md:items-start justify-between md:justify-center gap-2">
+                        <span class="text-[10px] uppercase tracking-widest text-accent font-semibold">Annual</span>
+                        <span class="font-heading text-5xl md:text-6xl font-bold leading-none">Girls</span>
+                        <span class="text-xs text-white/60 md:mt-2">Football</span>
+                    </div>
+                    <div class="md:col-span-9 p-6 md:p-8">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-accent font-semibold bg-accent/10 px-3 py-1 rounded-full">
+                                <i data-lucide="trophy" class="w-3 h-3"></i> Tournament
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="calendar" class="w-3 h-3"></i> New Year
+                            </span>
+                            <span class="text-xs text-gray-500 flex items-center gap-1.5">
+                                <i data-lucide="map-pin" class="w-3 h-3"></i> Juba
+                            </span>
+                        </div>
+                        <h3 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-3">Girls' Football Tournament</h3>
+                        <p class="text-gray-600 leading-relaxed text-sm">
+                            Our annual girls' football tournament. Theme for 2025: "Stepping into New Year with Hope." Promoting girls' participation in sport and raising awareness of their needs and potential.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="mt-12 text-center reveal">
+                <div class="inline-flex flex-col sm:flex-row items-center gap-5 bg-gradient-to-r from-primary to-accent rounded-2xl px-8 py-6 shadow-lg max-w-2xl">
+                    <i data-lucide="calendar" class="w-8 h-8 text-white shrink-0"></i>
+                    <p class="text-white text-sm text-center sm:text-left">Want to join an event or partner on one? Give us a call.</p>
+                    <a href="tel:+211929222918" class="bg-white text-primary font-bold px-5 py-2.5 rounded-xl whitespace-nowrap hover:bg-accent hover:text-white transition">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SUPPORT ===== -->
+    <section id="support" class="py-20 md:py-28 bg-gradient-to-b from-white to-light">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center max-w-3xl mx-auto mb-14 reveal">
+                <span class="inline-flex items-center gap-2 bg-accent/12 text-accent text-sm font-bold px-5 py-2 rounded-full">
+                    <i data-lucide="hand-heart" class="w-4 h-4"></i> Support the Foundation
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-primary mt-3 mb-4 leading-tight">
+                    Stand with us.
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded mx-auto mb-5"></div>
+                <p class="text-gray-600 text-[15.5px] max-w-2xl mx-auto">
+                    Every contribution goes into sport, peace work and community programmes. Nothing is wasted.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-md border border-gray-100 reveal">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent to-amber-600 rounded-xl flex items-center justify-center mb-5 shadow-md">
+                        <i data-lucide="hand-heart" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-3">Give</h3>
+                    <p class="text-sm text-gray-600 mb-4">Support a football team, a tournament, or a community event.</p>
+                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Balls, kits and equipment</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Tournament logistics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent"></i> Academy running costs</li>
+                    </ul>
+                    <a href="#contact" class="block bg-gradient-to-r from-accent to-amber-600 text-white text-center font-semibold py-3 rounded-xl transition hover:shadow-lg">Give Today</a>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-md border border-gray-100 reveal d1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary to-primaryLight rounded-xl flex items-center justify-center mb-5 shadow-md">
+                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-3">Volunteer</h3>
+                    <p class="text-sm text-gray-600 mb-4">Coach, mentor, organise, or help with events. We need hands.</p>
+                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i> Football coaching</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i> Event coordination</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-primary"></i> Youth mentoring</li>
+                    </ul>
+                    <a href="#contact" class="block bg-gradient-to-r from-primary to-primaryLight text-white text-center font-semibold py-3 rounded-xl transition hover:shadow-lg">Volunteer</a>
+                </div>
+
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-md border border-gray-100 reveal d2">
+                    <div class="w-14 h-14 bg-gradient-to-br from-secondary to-orange-700 rounded-xl flex items-center justify-center mb-5 shadow-md">
+                        <i data-lucide="handshake" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-primary mb-3">Partner</h3>
+                    <p class="text-sm text-gray-600 mb-4">Work with us on a tournament, a programme, or a longer partnership.</p>
+                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-secondary"></i> Sponsor an event</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-secondary"></i> Provide equipment</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-secondary"></i> Co-fund a programme</li>
+                    </ul>
+                    <a href="#contact" class="block bg-gradient-to-r from-secondary to-orange-700 text-white text-center font-semibold py-3 rounded-xl transition hover:shadow-lg">Partner With Us</a>
+                </div>
+            </div>
+
+            <div class="mt-14 text-center reveal">
+                <div class="inline-flex flex-col sm:flex-row items-center gap-5 bg-gradient-to-r from-primary to-accent rounded-2xl px-8 py-6 shadow-lg max-w-2xl">
+                    <i data-lucide="map-pin" class="w-8 h-8 text-white shrink-0"></i>
+                    <p class="text-white text-sm text-center sm:text-left">Tongpiny, Juba, South Sudan. Registered 2017.</p>
+                    <a href="tel:+211929222918" class="bg-white text-primary font-bold px-5 py-2.5 rounded-xl whitespace-nowrap hover:bg-accent hover:text-white transition">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+
+            <div class="reveal">
+                <span class="eyebrow mb-3">Get In Touch</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mt-2 mb-5 leading-tight">
+                    We would love to hear from you.
+                </h2>
+                <div class="w-16 h-1 bg-accent rounded mb-6"></div>
+                <p class="text-gray-600 mb-8 text-[15.5px] leading-relaxed">
+                    Whether you want to support the academy, partner on a peace programme, or just ask a question, write to us. We answer every message.
+                </p>
+
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 bg-light rounded-xl flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5 text-accent"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-primary text-sm mb-1">Location</h4>
+                            <p class="text-sm text-gray-500">Tongpiny, Juba, South Sudan</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 bg-light rounded-xl flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-5 h-5 text-accent"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-primary text-sm mb-1">Phone</h4>
+                            <a href="tel:+211929222918" class="text-sm text-gray-500 hover:text-accent transition">0929 222 918</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 bg-light rounded-xl flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5 text-accent"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-primary text-sm mb-1">Email</h4>
+                            <a href="mailto:contact@kulang.org" class="text-sm text-gray-500 hover:text-accent transition">contact@kulang.org</a>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-11 h-11 bg-light rounded-xl flex items-center justify-center shrink-0"><i data-lucide="globe" class="w-5 h-5 text-accent"></i></div>
+                        <div>
+                            <h4 class="font-semibold text-primary text-sm mb-1">Website</h4>
+                            <a href="https://kulang-foundation.org" class="text-sm text-gray-500 hover:text-accent transition">kulang-foundation.org</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal d1 bg-light rounded-2xl shadow-lg p-7 md:p-8 border border-gray-100">
+                <h3 class="font-heading text-xl font-bold text-primary mb-5">Send Us a Message</h3>
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" required placeholder="Your name" class="w-full px-4 py-3 border border-primary/12 rounded-xl text-sm bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition" />
+                        <input type="email" required placeholder="Email address" class="w-full px-4 py-3 border border-primary/12 rounded-xl text-sm bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition" />
+                    </div>
+                    <select class="w-full px-4 py-3 border border-primary/12 rounded-xl text-sm bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition text-gray-500">
+                        <option disabled selected>What is this about?</option>
+                        <option>Supporting the Sports Academy</option>
+                        <option>Partnership</option>
+                        <option>Volunteering</option>
+                        <option>Peace programme</option>
+                        <option>Events and tournaments</option>
+                        <option>General enquiry</option>
+                    </select>
+                    <textarea required rows="5" placeholder="Your message..." class="w-full px-4 py-3 border border-primary/12 rounded-xl text-sm bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none resize-none transition"></textarea>
+                    <button type="submit" class="w-full bg-accent hover:bg-amber-600 text-white font-semibold py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-md">
+                        Send Message <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CLOSING QUOTE ===== -->
+    <section class="relative py-24 md:py-32 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=2000&q=80" alt="Sunrise" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-br from-primaryDark/95 via-primary/90 to-primaryDark/95"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white reveal">
+            <i data-lucide="quote" class="w-12 h-12 text-accent mx-auto mb-6"></i>
+            <p class="font-heading text-3xl md:text-5xl italic leading-tight mb-8 text-white/95">
+                "Let us give humanity a chance. Let us give South Sudan a permanent solution."
+            </p>
+            <div class="inline-flex items-center gap-4">
+                <span class="w-12 h-px bg-accent"></span>
+                <span class="text-accent text-sm uppercase tracking-widest">Kulang Foundation</span>
+                <span class="w-12 h-px bg-accent"></span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-primaryDark text-white relative overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-primary/40 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+    <!-- Newsletter -->
+    <div class="relative z-10 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-12 md:py-14">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="font-heading text-2xl md:text-3xl font-bold mb-3">Stay in touch</h3>
+                    <p class="text-white/70 text-[15px]">Updates on tournaments, peace work and the academy.</p>
+                </div>
+                <form class="flex flex-col sm:flex-row gap-3" onsubmit="return false;">
+                    <input type="email" required placeholder="Your email address"
+                           class="flex-1 px-4 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-accent focus:bg-white/20 transition" />
+                    <button type="submit" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-amber-600 text-white font-bold px-6 py-3.5 rounded-xl transition shadow-lg">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-14 md:py-16">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+            <div class="lg:pr-4">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center border-2 border-accent/40">
+                        <span class="font-heading text-accent text-2xl font-bold">K</span>
+                    </div>
+                    <div>
+                        <span class="font-heading text-xl font-bold">Kulang Foundation</span>
+                        <span class="block text-[10px] uppercase tracking-widest text-white/60 mt-0.5">Est. 2017 · Juba</span>
+                    </div>
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed mb-5">
+                    A South Sudanese non-profit working on peace, sport, and community. Registered under the Government of South Sudan in 2017.
+                </p>
+
+                <div class="flex flex-wrap gap-3">
+                    <a href="#" aria-label="Facebook"
+                       class="group w-11 h-11 bg-white/15 hover:bg-[#1877F2] rounded-xl flex items-center justify-center transition-all duration-300 border border-white/25 hover:border-[#1877F2]">
+                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube"
+                       class="group w-11 h-11 bg-white/15 hover:bg-[#FF0000] rounded-xl flex items-center justify-center transition-all duration-300 border border-white/25 hover:border-[#FF0000]">
+                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram"
+                       class="group w-11 h-11 bg-white/15 hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#FCB045] rounded-xl flex items-center justify-center transition-all duration-300 border border-white/25 hover:border-transparent">
+                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:contact@kulang.org" aria-label="Email"
+                       class="group w-11 h-11 bg-white/15 hover:bg-accent rounded-xl flex items-center justify-center transition-all duration-300 border border-white/25 hover:border-accent">
+                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="m22 6-10 7L2 6"/>
+                        </svg>
+                    </a>
+                    <a href="tel:+211929222918" aria-label="Phone"
+                       class="group w-11 h-11 bg-white/15 hover:bg-accent rounded-xl flex items-center justify-center transition-all duration-300 border border-white/25 hover:border-accent">
+                        <svg class="w-5 h-5 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-5 text-white">Explore</h4>
+                <ul class="space-y-2.5 text-sm text-white/70">
+                    <li><a href="#home" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Home</a></li>
+                    <li><a href="#about" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> About Us</a></li>
+                    <li><a href="#founder" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Our Founder</a></li>
+                    <li><a href="#work" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> What We Do</a></li>
+                    <li><a href="#academy" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Sports Academy</a></li>
+                    <li><a href="#gallery" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Gallery</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-5 text-white">Get Involved</h4>
+                <ul class="space-y-2.5 text-sm text-white/70">
+                    <li><a href="#support" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Give</a></li>
+                    <li><a href="#support" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Volunteer</a></li>
+                    <li><a href="#support" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Partner</a></li>
+                    <li><a href="#events" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Upcoming Events</a></li>
+                    <li><a href="#partners" class="hover:text-accent transition inline-flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i> Our Partners</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-5 text-white">Contact</h4>
+                <ul class="space-y-4 text-sm text-white/70">
+                    <li class="flex items-start gap-3">
+                        <div class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-4 h-4 text-accent"></i></div>
+                        <span class="pt-1.5">Tongpiny, Juba,<br>South Sudan</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="phone" class="w-4 h-4 text-accent"></i></div>
+                        <a href="tel:+211929222918" class="hover:text-accent transition">0929 222 918</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-4 h-4 text-accent"></i></div>
+                        <a href="mailto:contact@kulang.org" class="hover:text-accent transition">contact@kulang.org</a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center shrink-0"><i data-lucide="globe" class="w-4 h-4 text-accent"></i></div>
+                        <a href="https://kulang-foundation.org" class="hover:text-accent transition">kulang-foundation.org</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="relative z-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-3">
+            <p class="text-xs text-white/45">© <span id="year"></span> Kulang Foundation. All rights reserved. Registered 2017.</p>
+            <p class="font-heading italic text-xs text-accent/80">Peace · Sport · Community</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    /* Mobile menu */
+    const menuToggle  = document.getElementById('menu-toggle');
+    const mobileMenu  = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const menuClose   = document.getElementById('menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function openMobileMenu() {
+        if (!mobileMenu || !menuOverlay) return;
+        mobileMenu.classList.add('open');
+        menuOverlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMobileMenu() {
+        if (!mobileMenu || !menuOverlay) return;
+        mobileMenu.classList.remove('open');
+        menuOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+    if (menuToggle)  menuToggle.addEventListener('click', openMobileMenu);
+    if (menuClose)   menuClose.addEventListener('click', closeMobileMenu);
+    if (menuOverlay) menuOverlay.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(function (link) { link.addEventListener('click', closeMobileMenu); });
+
+    /* Scroll reveal */
+    const revealElements = document.querySelectorAll('.reveal');
+    if (revealElements.length) {
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(function (el) { revealObserver.observe(el); });
+    }
+
+    /* Counters */
+    const counters = document.querySelectorAll('.counter, .counter-value');
+    if (counters.length) {
+        const counterObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target, 10);
+                if (isNaN(target)) return;
+
+                let current = 0;
+                const step = Math.max(1, Math.ceil(target / 35));
+                const interval = setInterval(function () {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = target;
+                        clearInterval(interval);
+                    } else {
+                        el.textContent = current;
+                    }
+                }, 28);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.4 });
+        counters.forEach(function (c) { counterObserver.observe(c); });
+    }
+
+    /* Smooth anchor */
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    /* Navbar shadow */
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                }
+                ticking = false;
+            });
+        }, { passive: true });
+    }
+
+    /* Contact form */
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const button = contactForm.querySelector('button[type="submit"]');
+            if (!button) return;
+            const original = button.innerHTML;
+            button.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Message sent';
+            button.disabled = true;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            setTimeout(function () {
+                button.innerHTML = original;
+                button.disabled = false;
+                contactForm.reset();
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }, 2200);
+        });
+    }
+
+    /* Gallery lightbox */
+    (function () {
+        const items = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        if (!items.length || !lightbox) return;
+
+        const boxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const openAllBtn = document.getElementById('gallery-cta');
+        if (!boxImg || !closeBtn || !prevBtn || !nextBtn) return;
+
+        const total = items.length;
+        let index = 0;
+
+        function dataAt(i) {
+            const img = items[i].querySelector('img');
+            return { src: img ? img.src : '', alt: img ? img.alt : '' };
+        }
+        function show(i) {
+            index = (i + total) % total;
+            const d = dataAt(index);
+            boxImg.src = d.src;
+            boxImg.alt = d.alt;
+        }
+        function open(i) {
+            show(i);
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function close() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        items.forEach(function (item, i) { item.addEventListener('click', function () { open(i); }); });
+        closeBtn.addEventListener('click', close);
+        nextBtn.addEventListener('click', function () { show(index + 1); });
+        prevBtn.addEventListener('click', function () { show(index - 1); });
+        lightbox.addEventListener('click', function (e) { if (e.target === lightbox) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowRight') show(index + 1);
+            if (e.key === 'ArrowLeft') show(index - 1);
+        });
+        if (openAllBtn) openAllBtn.addEventListener('click', function () { open(0); });
+    })();
+})();
+</script>
+</body>
+</html>
